@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Nav = () => {
@@ -23,14 +24,24 @@ const Nav = () => {
     return (
         <div className="navbar bg-base-100 rounded-lg shadow-xl sticky top-0 container mx-auto p-4">
             <div className="flex-1">
-                <a className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Byte<span className="text-primary">Blaze</span></a>
+                <Link
+                    to='/'
+                    className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">
+                    Byte<span className="text-primary">Blaze</span>
+                </Link>
             </div>
 
             <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li className="font-bold"><a>Home</a></li>
-                    <li className="font-bold text-primary"><a>Blogs</a></li>
-                    <li className="font-bold"><a>Bookmarks</a></li>
+                <ul className="menu menu-horizontal px-1 hidden md:flex gap-5">
+                    <NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>
+                        Home
+                    </NavLink>
+                    <NavLink to='/blogs' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>
+                        Blogs
+                    </NavLink>
+                    <NavLink to='/bookmarks' className={({ isActive }) => isActive ? 'text-primary font-bold' : 'font-bold'}>
+                        Bookmarks
+                    </NavLink>
                 </ul>
             </div>
 
