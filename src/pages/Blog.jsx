@@ -13,6 +13,7 @@ const Blog = () => {
     public_reactions_count,
   } = blog;
 
+
   return (
     <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
       <article className="space-y-8 dark:bg-base-100 dark:text-base-900">
