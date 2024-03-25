@@ -1,18 +1,13 @@
-import { Link, useLoaderData } from "react-router-dom";
-import placeholderImage from "../assets/404.jpg";
+import { Link, useLoaderData, Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const Blog = () => {
-
   const [tabIndex, setTabIndex] = useState(0);
   const blog = useLoaderData();
 
   const {
-    cover_image,
     title,
-    description,
     published_at,
-    id,
     comments_count,
     reading_time_minutes,
     public_reactions_count,
@@ -25,12 +20,6 @@ const Blog = () => {
           <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">
             {title}
           </h1>
-
-          <img
-            role="presentation"
-            className="object-cover w-full rounded h-full dark:bg-base-500"
-            src={cover_image || placeholderImage}
-          />
 
           <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-base-600">
             <p className="text-sm">
@@ -46,9 +35,11 @@ const Blog = () => {
           {/* tabs start*/}
           <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-base-100 dark:text-base-800">
             <Link
-              to=''
-              onClick = {() => setTabIndex(0)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0 rounded-t-lg' : 'border-b'} dark:border-base-600 dark:text-base-900`}
+              to=""
+              onClick={() => setTabIndex(0)}
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
+                tabIndex === 0 ? "border border-b-0 rounded-t-lg" : "border-b"
+              } dark:border-base-600 dark:text-base-900`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +57,10 @@ const Blog = () => {
             </Link>
             <Link
               to={`author`}
-              onClick = {() => setTabIndex(1)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-b-0 rounded-t-lg' : 'border-b'} dark:border-base-600 dark:text-base-900`}
+              onClick={() => setTabIndex(1)}
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
+                tabIndex === 1 ? "border border-b-0 rounded-t-lg" : "border-b"
+              } dark:border-base-600 dark:text-base-900`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,53 +80,9 @@ const Blog = () => {
           </div>
           {/* tabs end */}
         </div>
-      </article>
 
-      <div>
-        <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-base-600">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-base-50"
-          >
-            #MambaUI
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-base-50"
-          >
-            #TailwindCSS
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-base-50"
-          >
-            #Angular
-          </a>
-        </div>
-        <div className="space-y-2">
-          <h4 className="text-lg font-semibold">Related posts</h4>
-          <ul className="ml-4 space-y-1 list-disc">
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Nunc id magna mollis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Duis molestie, neque eget pretium lobortis
-              </a>
-            </li>
-            <li>
-              <a rel="noopener noreferrer" href="#" className="hover:underline">
-                Mauris nec urna volutpat, aliquam lectus sit amet
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <Outlet />
+      </article>
     </div>
   );
 };
