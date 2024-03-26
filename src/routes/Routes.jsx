@@ -6,11 +6,13 @@ import Blog from "../pages/Blog";
 import Bookmarks from "../pages/Bookmarks";
 import Content from "../components/Content";
 import Author from "../components/Author";
+import ErrorPage from "../components/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
