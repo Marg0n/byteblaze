@@ -45,6 +45,6 @@ export const deleteBlogs = (id) => {
     const remainingBlogs = blogs.filter( b => b.id !== id);
 
     //setting in localStorage
-    localStorage.setItem('blogs', JSON.stringify(remainingBlogs));
+    localStorage.setItem('storedBlog', JSON.stringify(remainingBlogs));
     toast.success('Blog removed from Bookmarks!');
 }

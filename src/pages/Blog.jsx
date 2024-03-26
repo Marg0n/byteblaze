@@ -17,7 +17,6 @@ const Blog = () => {
   } = blog;
 
   const handleBookmark = blog => {
-    console.log(blog);
     saveBlogs(blog);
   }
 
@@ -41,7 +40,7 @@ const Blog = () => {
           </div>
 
           {/* tabs start*/}
-          <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-base-100 dark:text-base-800">
+          <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-base-100 dark:text-base-800 group">
             <Link
               to=""
               onClick={() => setTabIndex(0)}
@@ -86,7 +85,7 @@ const Blog = () => {
 
             {/* bookmark button */}
             <div onClick={() => handleBookmark(blog)} className="bg-primary p-3 ml-5 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden">
-              <MdBookmarkAdd size={20} className='text-secondary hover:text-primary' />
+              <MdBookmarkAdd size={20} className='text-secondary group-hover:text-primary' />
             </div>
           </div>
           {/* tabs end */}

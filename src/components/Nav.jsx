@@ -22,7 +22,7 @@ const Nav = () => {
     }
 
     return (
-        <div className="navbar bg-base-100 rounded-lg shadow-xl sticky top-0 p-4">
+        <div className="navbar bg-base-100 rounded-lg shadow-xl sticky top-0 p-4 z-10">
             <div className="flex-1">
                 <Link
                     to='/'
