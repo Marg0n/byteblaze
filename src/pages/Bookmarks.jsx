@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 import { deleteBlogs, getBlogs } from "../utilities/localStorageController";
+import EmptyState from "../components/EmptyState";
 
 
 const Bookmarks = () => {
@@ -18,7 +19,7 @@ const Bookmarks = () => {
         setBlogs(storedBlogs);
     }
 
-    if (blogs.length < 1) return <h1>null</h1>
+    if (blogs.length < 1) return <EmptyState message='No bookmarks Available!!' address={'/blogs'} label={'Go To Blogs'}/>
     return (
         <div className="grid px-4 sm:px-8 lg:px-12 py-8 justify-center grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog) => (
