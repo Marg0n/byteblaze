@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MdBookmarkAdd } from "react-icons/md";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { saveBlogs } from "../utilities/localStorageController";
+
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -16,6 +18,7 @@ const Blog = () => {
 
   const handleBookmark = blog => {
     console.log(blog);
+    saveBlogs(blog);
   }
 
   return (
