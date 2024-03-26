@@ -1,6 +1,6 @@
-import { Link, useLoaderData, Outlet } from "react-router-dom";
 import { useState } from "react";
 import { MdBookmarkAdd } from "react-icons/md";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -42,9 +42,8 @@ const Blog = () => {
             <Link
               to=""
               onClick={() => setTabIndex(0)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                tabIndex === 0 ? "border border-b-0 rounded-t-lg" : "border-b"
-              } dark:border-base-600 dark:text-base-900`}
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? "border border-b-0 rounded-t-lg" : "border-b"
+                } dark:border-base-600 dark:text-base-900`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,9 +62,8 @@ const Blog = () => {
             <Link
               to={`author`}
               onClick={() => setTabIndex(1)}
-              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-                tabIndex === 1 ? "border border-b-0 rounded-t-lg" : "border-b"
-              } dark:border-base-600 dark:text-base-900`}
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? "border border-b-0 rounded-t-lg" : "border-b"
+                } dark:border-base-600 dark:text-base-900`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,9 +81,9 @@ const Blog = () => {
               <span>Author</span>
             </Link>
 
-            {/* bokmark button */}
+            {/* bookmark button */}
             <div onClick={() => handleBookmark(blog)} className="bg-primary p-3 ml-5 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden">
-              <MdBookmarkAdd size={20} className='text-secondary hover:text-primary'/>
+              <MdBookmarkAdd size={20} className='text-secondary hover:text-primary' />
             </div>
           </div>
           {/* tabs end */}
